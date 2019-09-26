@@ -80,7 +80,9 @@ def xor_encrypt(tips,key = None):
 	return bxors
 
 
-def xor_decrypt(secret,key = None):
+def xor_decrypt(secret, key = None):
+	if not secret: 
+		return None
 	if not key:
 		key = get_mac_address()
 	
