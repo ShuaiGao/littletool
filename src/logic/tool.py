@@ -50,9 +50,6 @@ class HomeFrame(wxUI.home):
 
 		# self.pannel.Refresh()
 	def InitGUIValue(self):
-		if self.m_data_account.get("key", "") != libs.getKey():
-			self.m_data_account = {}
-			return
 		self.m_sender.SetValue(self.m_data_account.get("sendermail", ""))
 		self.m_receiver.SetValue(";".join(self.m_data_account.get("receivermaillist", ())))
 

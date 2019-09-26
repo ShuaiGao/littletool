@@ -50,7 +50,7 @@ class SettingFrame(SettingFrameBase):
 		if not senderPWD or senderPWD == "":
 			return
 
-		dataTbl = {"sendermail": senderMail,"receivermaillist": receiverMailList,"senderpwd": senderPWD,"key":libs.getKey()}
+		dataTbl = {"sendermail": senderMail,"receivermaillist": receiverMailList,"senderpwd": senderPWD}
 		libs.w_json(dataTbl, "account_data", encrypt = True)
 
 		self.home.RefeshData(dataTbl)

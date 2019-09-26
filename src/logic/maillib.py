@@ -50,6 +50,8 @@ def CreateAndSendMail(senderMail, senderName, password, receiverName, receiverMa
 		smtpObj.login(senderMail, password)
 		smtpObj.sendmail(senderMail, receiverMaillist, message.as_string())
 		raise Exceptlog("发送邮件成功")
+	except smtplib.SMTPAuthenticationError as e:
+		raise ExceptError("""发送邮件错误，帐号和密码（校验码）不匹配。校验码获取可参照：http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256""") 
 	except smtplib.SMTPException as e:
 		raise ExceptError("发送邮件错误 " + str(e)) 
 		
